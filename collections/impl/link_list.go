@@ -157,10 +157,13 @@ func (l *LinkList[T]) ToString() string {
 	return "nodes"
 }
 
+func (a *LinkList[T]) SortBy(comparator *collections.Comparator[T]) {
+	//
+}
+
 // 链表非有序集合
 func (l *LinkList[T]) Sort(mapper functions.Function[T, int]) {
 	//TODO implement me
-	panic("implement me")
 }
 
 func (l *LinkList[T]) NewEmpty() collections.List[T] {

@@ -114,6 +114,12 @@ func (a *ArrayList[T]) Distinct() {
 	a.data = res
 }
 
+func (a *ArrayList[T]) SortBy(comparator *collections.Comparator[T]) {
+	sort.SliceStable(a.GetData(), func(i, j int) bool {
+		return comparator.Compare(a.GetData()[i], a.GetData()[j]) < 0
+	})
+}
+
 // Sort 对 ArrayList 中的元素进行排序，根据给定的映射函数返回排序后的 ArrayList。
 func (a *ArrayList[T]) Sort(mapper functions.Function[T, int]) {
 	sort.SliceStable(a.GetData(), func(i, j int) bool {

@@ -19,6 +19,7 @@ type List[T comparable] interface {
 	ToString() string
 	Sort(mapper functions.Function[T, int])
 	NewEmpty() List[T]
+	SortBy(comparator *Comparator[T])
 }
 
 // Filter 根据给定的谓词函数过滤 List 中的元素，并返回新的 List。
